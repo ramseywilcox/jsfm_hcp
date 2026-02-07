@@ -120,7 +120,7 @@ for sub in subjects:
     mat_bin = (mat > 0).astype(int)
     d = np.sum(mat_bin, axis=1)
     r = np.ceil(np.mean(d) / 4).astype(int)
-    regular_matrix = regular_matrix_generator(mat, r=avg_deg_reduce)
+    regular_matrix = regular_matrix_generator(mat, r=r)
     random_matrix = random_rewire_matrix(mat)
     C_real = np.mean(clustering_coef_wu(mat))
     C_latt = np.mean(clustering_coef_wu(regular_matrix))
